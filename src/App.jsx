@@ -1,41 +1,58 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import tomdoro from './assets/tomodoro.png'
 import './App.css'
 
 function App() {
-  const [userData, setUserData] = useState([])
-  const [repos, setRepos] = useState([])
-
-  const fetchUserData = () => {
+  const [userInfo, setUserinfo] = useState(0)
+  const [repo, setRepos] = useState(0)
+  
+  const fetchUserInfo = () => {
     fetch('https://api.github.com/users/igorsantos13')
     .then(res => res.json())
-    .then(data => setUserData(data))
+    .then(data => setUserinfo(data))
   }
 
   const fetchRepos = () => {
-    fetch("https://api.github.com/users/igorsantos13/repos")
+    fetch('https://api.github.com/users/igorsantos13/repos')
     .then(res => res.json())
     .then(data => setRepos(data))
   }
 
-  useEffect(()=>{
-    fetchUserData()
+  useEffect(()=> {
+    fetchUserInfo()
     fetchRepos()
   }, [])
 
+  console.log(userInfo)
+  //fetch data [x]
+  //display main info from github []
+  //display tomodoro and pokedex []
+  //future: display all (or a few of) repositories []
+    //fetch all repos [x]
   return (
     <>
-    <h1>{userData.name}</h1>
-    <p>{userData.bio}</p>
-      
-      <br />
+        {userInfo && (
+        <div>
+          <img src={userInfo.avatar_url} alt={userInfo.name} />
+          <b>{`@${userInfo.login}`}</b>
 
-        {repos.length > 0 && (
-          <ul>
-            {repos.map(repo => (
-              <li>{repo.name}</li>
-            ))}
-          </ul>
+          <h1>{userInfo.name}</h1>
+
+          <a href="https://github.com/igorsantos13" target='_blank'>GitHub</a>
+          <a href="https://www.linkedin.com/in/igorsantosdev/" target='_blank'>LinkedIn</a>
+        </div>
         )}
+
+        <div>
+          <h1>Principais Projetos</h1>
+
+          <div className='card'>
+            <img src={tomdoro} alt="tomodoro" />
+            <h2>Tomodoro</h2>
+            <a href='https://igorsantos13.github.io/tomodoro/' target='_blank'>Ver PROJETO</a>
+            <a href='https://github.com/igorsantos13/tomodoro' target='_blank'>Ver CÓDIGO</a>
+          </div>
+        </div>
     </>
   )
 }
