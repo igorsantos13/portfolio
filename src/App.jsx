@@ -1,59 +1,29 @@
 import { useEffect, useState } from 'react'
-import tomdoro from './assets/tomodoro.png'
+import tomodoro from './assets/tomodoro.png'
+import pokedex from './assets/pokedex.png'
+
 import './App.css'
+import Card from './components/Card'
+import SkillCourse from './components/SkillCourse'
+import Main from './components/Main'
+import Contact from './components/Contact'
 
 function App() {
-  const [userInfo, setUserinfo] = useState(0)
-  const [repo, setRepos] = useState(0)
-  
-  const fetchUserInfo = () => {
-    fetch('https://api.github.com/users/igorsantos13')
-    .then(res => res.json())
-    .then(data => setUserinfo(data))
-  }
 
-  const fetchRepos = () => {
-    fetch('https://api.github.com/users/igorsantos13/repos')
-    .then(res => res.json())
-    .then(data => setRepos(data))
-  }
-
-  useEffect(()=> {
-    fetchUserInfo()
-    fetchRepos()
-  }, [])
-
-  console.log(userInfo)
-  //fetch data [x]
-  //display main info from github []
-  //display tomodoro and pokedex []
-  //future: display all (or a few of) repositories []
-    //fetch all repos [x]
   return (
-    <>
-        {userInfo && (
-        <div>
-          <img src={userInfo.avatar_url} alt={userInfo.name} />
-          <b>{`@${userInfo.login}`}</b>
+    <div className='flex flex-col justify-center items-center'>
+        <Main />
 
-          <h1>{userInfo.name}</h1>
+        <h1>Principais Projetos</h1>
 
-          <a href="https://github.com/igorsantos13" target='_blank'>GitHub</a>
-          <a href="https://www.linkedin.com/in/igorsantosdev/" target='_blank'>LinkedIn</a>
-        </div>
-        )}
+        <Card img={tomodoro} name={'Tomodoro'} githubLink={'https://github.com/igorsantos13/tomodoro'} project={'igorsantos13.github.io/tomodoro/'}/>
+        <Card img={pokedex} name={'Pokédex'} githubLink={'https://github.com/igorsantos13/pokedex'} project={'igorsantos13.github.io/pkedex/'}/>
 
-        <div>
-          <h1>Principais Projetos</h1>
+        <SkillCourse/>
 
-          <div className='card'>
-            <img src={tomdoro} alt="tomodoro" />
-            <h2>Tomodoro</h2>
-            <a href='https://igorsantos13.github.io/tomodoro/' target='_blank'>Ver PROJETO</a>
-            <a href='https://github.com/igorsantos13/tomodoro' target='_blank'>Ver CÓDIGO</a>
-          </div>
-        </div>
-    </>
+        
+        <Contact />
+    </div>
   )
 }
 
