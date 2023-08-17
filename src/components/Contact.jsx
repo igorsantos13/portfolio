@@ -12,10 +12,13 @@ function Contact() {
             
           <div className='flex flex-row items-center justify-center gap-4 mt-3'>
 
-          <AiFillGithub className='text-6xl'/>
-            <li className='mb-4'> <a href="https://github.com/igorsantos13" className='text-2xl'>GitHub</a></li> <br />
-          <AiFillLinkedin className='text-6xl'/>
-            <li  className='mb-4'> <a href="https://www.linkedin.com/in/igorsantosdev/" className='text-2xl'>LinkedIn</a></li> <br />
+            <li className='flex flex-row items-center'>
+              <AiFillGithub className='text-6xl'/>
+               <a href="https://github.com/igorsantos13" className='text-2xl'>GitHub</a>
+            </li> 
+            <li  className='flex flex-row items-center'> 
+              <AiFillLinkedin className='text-6xl'/>
+              <a href="https://www.linkedin.com/in/igorsantosdev/" className='text-2xl'>LinkedIn</a></li>
             </div>
           </ul>
 

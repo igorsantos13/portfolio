@@ -6,7 +6,7 @@ function Card(props) {
     <div className=''>
 
           <div className='flex flex-col items-center justify-center h-[500px]'>
-            <h2 className='text-5xl text-[#343a40]'>#{props.name}</h2>
+            <h2 className='text-5xl font-poppins text-[#343a40]'>#{props.name}</h2>
             <img className='h-[250px] m-4 border-solid border-4 rounded-md border-[#343a40] p-2' src={props.img} alt={props.name} />
             <br />
             
