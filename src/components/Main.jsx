@@ -27,10 +27,10 @@ function Main() {
     <div>
         {userInfo && (
           
-          <div className='flex flex-row items-center justify-center w-[90vw] h-[90vh] gap-24 bg-[#212529] rounded-3xl'>
+          <div className='flex flex-col items-center justify-center w-[90vw] h-[90vh] gap-24 bg-[#212529] rounded-3xl md:flex-row'>
             <motion.div whileHover={{scale: 1.1, transition:{duration: .4}}}> 
             <img src={userInfo.avatar_url} alt={userInfo.name} className='rounded-full w-72 border-[#6c757d] border-4 border-solid'/>
-            <b className='text-[#dee2e6]'>{`@${userInfo.login}`}</b>
+            <b className='text-[#dee2e6] hidden md:block'>{`@${userInfo.login}`}</b>
             </motion.div>
   
             <div className='w-[400px] p-2 flex flex-col items-center justify-center text-justify'>

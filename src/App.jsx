@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import tomodoro from './assets/tomodoro.png'
 import pokedex from './assets/pokedex.png'
-
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css';
 import './App.css'
 import Card from './components/Card'
 import SkillCourse from './components/SkillCourse'
@@ -17,14 +18,39 @@ function App() {
         <Main />
 
         <h1 className='text-7xl text-[#343a40] mt-4'>Principais Projetos</h1>
-        <div className='grid w-screen h-screen grid-cols-2 gap-8 grid-row-2' id='#projetos'>
+        <div className='hidden w-screen h-screen gap-2 md:grid grid-col-2 md:grid-cols-2 md:grid-row-2' id='#projetos'>
         <Card img={tomodoro} name={'Tomodoro'} githubLink={'https://github.com/igorsantos13/tomodoro'} project={'https://igorsantos13.github.io/tomodoro/'}/>
         <Card img={pokedex} name={'Pokédex'} githubLink={'https://github.com/igorsantos13/pokedex'} project={'https://igorsantos13.github.io/pokedex/'}/>
-
-        <div className='-mt-[200px] flex flex-row items-center justify-center w-screen rounded-md bg-[#6c757d]'>
-          <h1 className='text-9xl text-[#adb5bd]'>EM BREVE!</h1>
+        <div className='md:flex flex-row items-center justify-center w-screen rounded-md bg-[#6c757d]'>
+              <h1 className='text-9xl text-[#adb5bd]'>EM BREVE!</h1>
         </div>
-      
+        </div>
+
+        <div className='w-screen md:hidden'>
+          <Swiper
+            
+            slidesPerView={1}
+            pagination={{clickable: true}}
+            navigation
+
+          >
+            <SwiperSlide className='cursor-pointer'>
+              <Card img={tomodoro} name={'Tomodoro'} githubLink={'https://github.com/igorsantos13/tomodoro'} project={'https://igorsantos13.github.io/tomodoro/'}/>
+              
+            </SwiperSlide>
+
+            <SwiperSlide className='cursor-pointer'>
+              <Card img={pokedex} name={'Pokédex'} githubLink={'https://github.com/igorsantos13/pokedex'} project={'https://igorsantos13.github.io/pokedex/'}/>
+
+            </SwiperSlide>
+
+            <SwiperSlide className='cursor-pointer'>
+            <div className='rounded-md flex flex-col items-center justify-center mt-[200px] bg-[#6c757d]'>
+              <h1 className='text-9xl text-[#adb5bd]'>EM BREVE!</h1>
+            </div>
+            </SwiperSlide>
+          </Swiper>
+
         </div>
 
         <div className='mt-4 flex flex-col items-center justify-center w-[90vw] h-[50vh] gap-24 bg-[#212529] rounded-3xl' id='#tecnologias'>
