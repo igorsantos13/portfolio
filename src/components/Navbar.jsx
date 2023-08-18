@@ -6,11 +6,11 @@ function Navbar() {
 
   // const upVariant = 
   return (
-    <nav>
-      <motion.ul animate={{ y: [-50, 0] }} className='flex flex-row items-center justify-between w-[70vw] mb-4'>
-        <li><Link activeClass='active' smooth spy to="#projetos">Projetos</Link></li>
-        <li><Link activeClass='active' smooth spy to="#tecnologias">Tecnologias</Link></li>
-        <li><Link activeClass='active' smooth spy to="#contato">Contato</Link></li>
+    <nav className=''>
+      <motion.ul animate={{ y: [-50, 0] }} className='w-[90vw] left-10 md:left-16 flex flex-row items-center justify-around '>
+        <li className='cursor-pointer'><Link activeClass='active' smooth spy to="#projetos">Projetos</Link></li>
+        <li className='cursor-pointer'><Link activeClass='active' smooth spy to="#tecnologias">Tecnologias</Link></li>
+        <li className='cursor-pointer'><Link activeClass='active' smooth spy to="#contato">Contato</Link></li>
       </motion.ul>
     </nav>
   )

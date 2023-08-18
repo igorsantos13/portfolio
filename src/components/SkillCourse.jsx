@@ -1,11 +1,19 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 function SkillCourse() {
   return (
-    <div className='skills-courses'>
+    <motion.div className='skills-courses'>
 
         {/* skills */}
-        <div className="">
+        <motion.div initial={{x:-100, opacity: 0}} 
+        whileInView={{x:0, opacity:1}} 
+        
+        transition={{
+          duration: 0.4,
+          delay: 1.2,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}  className="">
           <h1 className='text-6xl text-[#ced4da]'>Habilidades 💻</h1>
           <ul>
             <li className='text-[#dee2e6] mt-1'>ReactJS</li>
@@ -13,24 +21,31 @@ function SkillCourse() {
             <li className='text-[#dee2e6] mt-1'>TailwindCSS</li>
             <li className='text-[#dee2e6] mt-1'>GIT</li>
           </ul>
-        </div>
+        </motion.div>
 
       <br />
       <hr />
       <br />
       
           {/* courses */}
-        <div className="courses">
+        <motion.div initial={{x:100, opacity: 0}} 
+        whileInView={{x:0, opacity:1}} 
+        
+        transition={{
+          duration: 0.4,
+          delay: 1.2,
+          ease: [0, 0.71, 0.2, 1.01]
+        }} className="">
           <h1 className='text-6xl text-[#ced4da]'>Cursos ✍️</h1>
           <ul>
             <li className='text-[#dee2e6] mt-1'>DevMedia</li>
             <li className='text-[#dee2e6] mt-1'>Cod3r (Udemy)</li>
             <li className='text-[#dee2e6] mt-1'>FreeCodeCamp (FronEnd)</li>
           </ul>
-        </div>
+        </motion.div>
 
 
-        </div>
+        </motion.div>
   )
 }
 

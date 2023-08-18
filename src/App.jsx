@@ -72,10 +72,10 @@ function App() {
 
         </div>
 
-        <div className='mt-4 flex flex-col items-center justify-center w-[90vw] h-[50vh] gap-24 bg-[#212529] rounded-3xl' id='#tecnologias'>
+        <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 0.5, duration:0.8}}  className='mt-4 flex flex-col items-center justify-center w-[90vw] h-[50vh] gap-24 bg-[#212529] rounded-3xl' id='#tecnologias'>
         <SkillCourse/>
 
-        </div>
+        </motion.div>
 
       <div id='#contato'>
         <Contact />

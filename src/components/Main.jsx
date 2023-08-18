@@ -1,5 +1,5 @@
 import React from 'react'
-import {AiFillGithub, AiFillLinkedin} from 'react-icons/ai'
+import {AiFillGithub, AiFillLinkedin, AiFillFileText} from 'react-icons/ai'
 import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 
@@ -24,7 +24,7 @@ function Main() {
     fetchRepos()
   }, [])
   return (
-    <div>
+    <div className='mt-4'>
         {userInfo && (
           
           <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{
@@ -41,18 +41,20 @@ function Main() {
              className='w-[400px] p-2 flex flex-col items-center justify-center text-justify'>
             <h1 className='text-3xl font-bold text-[#ced4da]'>{userInfo.name}</h1>
   
-            <p className='m-4 text-justify text-[#dee2e6]'>Desenvolvedor Frontend com habilidades em ReactJS. Tenho experiência na criação de interfaces de usuário
-  responsivas para web e dispositivos móveis utilizando
-  TailwindCSS.</p>
+            <p className='m-4 text-justify text-[#dee2e6]'>Desenvolvedor Frontend com habilidades em <b>ReactJS</b> e <b>TailwindCSS</b> para UI responsivas. <i>Freelancer desde de Janeiro de 2023,</i> tenho como paixão o aprendizado, sempre evoluindo e me adaptando as novas tecnologias. </p>
   
             <ul className='flex flex-row gap-2'>
-                <li>
-                    <a className='text-5xl text-[#dee2e6]' href="https://github.com/igorsantos13" target='_blank'><AiFillGithub /></a>
-                </li>
-                <li>
+                <motion.li whileHover={{scale:1.1}} transition={{type: 'tween', stiffness:100}}>
+                    <a  className='text-5xl text-[#dee2e6]' href="https://github.com/igorsantos13" target='_blank'><AiFillGithub /></a>
+                </motion.li>
 
-                <a className='text-5xl text-[#dee2e6]' href="https://www.linkedin.com/in/igorsantosdev/" target='_blank'><AiFillLinkedin/></a>
-                </li>
+                <motion.li whileHover={{scale:1.1}} transition={{type: 'tween', stiffness:100}}>
+                  <a className='text-5xl text-[#dee2e6]' href="https://www.linkedin.com/in/igorsantosdev/" target='_blank'><AiFillLinkedin/></a>
+                </motion.li>
+
+                <motion.li whileHover={{scale:1.1}} transition={{type: 'tween', stiffness:100}}>
+                  <a className='text-5xl text-[#dee2e6]' href="../../public/igorsantos.pdf" download='igorsantos' target='_blank' rel='noreferrer'><AiFillFileText/></a>
+                </motion.li>
             </ul>
             </motion.div>
           </motion.div>
