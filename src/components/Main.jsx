@@ -2,6 +2,7 @@ import React from 'react'
 import {AiFillGithub, AiFillLinkedin, AiFillFileText} from 'react-icons/ai'
 import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
+import TextSpan from './TextSpan'
 
 function Main() {
     const [userInfo, setUserinfo] = useState(0)
@@ -18,6 +19,9 @@ function Main() {
     .then(res => res.json())
     .then(data => setRepos(data))
   }
+
+  const headerName = userInfo?.name?.split('')
+  console.log(typeof headerName)
 
   useEffect(()=> {
     fetchUserInfo()
@@ -39,7 +43,17 @@ function Main() {
   
             <motion.div initial={{x: 1000}} animate={{x:0}} transition={{duration: 0.5, delay:1, ease: [0, 0.71, 0.2, 1.01]}}
              className='w-[400px] p-2 flex flex-col items-center justify-center text-justify'>
-            <h1 className='text-3xl font-bold text-[#ced4da]'>{userInfo.name}</h1>
+               <div className='flex flex-row items-center justify-center'>
+
+              {
+                headerName.map((letter, index) => {
+                  return(
+                    <TextSpan key={index}>{letter === ' ' ? "\u00A0" : letter}</TextSpan>
+
+                  )
+                })
+              }
+               </div>
   
             <p className='m-4 text-justify text-[#dee2e6]'>Desenvolvedor Frontend com habilidades em <b>ReactJS</b> e <b>TailwindCSS</b> para UI responsivas. <i>Freelancer desde de Janeiro de 2023,</i> tenho como paixão o aprendizado, sempre evoluindo e me adaptando as novas tecnologias. </p>
   

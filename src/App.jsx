@@ -5,7 +5,7 @@ import pokedex from './assets/pokedex.png'
 import { register } from 'swiper/element/bundle'
 // import { Virtual } from 'swiper/modules'
 import 'swiper/css';
-import './App.css'
+
 import Card from './components/Card'
 import SkillCourse from './components/SkillCourse'
 import Main from './components/Main'
@@ -14,8 +14,7 @@ import Navbar from './components/Navbar'
 import { motion, useScroll } from 'framer-motion';
 
 function App() {
-  const { scrollYProgress } = useScroll()
-
+  
   register()
   return (
     <div className='flex flex-col items-center justify-center'>

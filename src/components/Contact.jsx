@@ -4,8 +4,8 @@ import { motion, transform } from 'framer-motion'
 
 function Contact() {
   return (
-    <div className="mt-4">
-          <motion.h1 initial={{y:-100, opacity:0}} whileInView={{y:0, opacity:1}} transition={{delay:0.3, duration:.5}} className='text-5xl'>Entre em contato comigo! 🔊</motion.h1>
+    <div className="flex flex-col items-center justify-center mt-4">
+          <motion.h1 initial={{y:-100, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:0.3, duration:.5}} className='text-5xl'>Entre em contato comigo! 🔊</motion.h1>
           <ul className='flex flex-col items-center justify-center w-screen '>
             <motion.li className='flex flex-row items-center' initial={{y:100, opacity:0}} whileInView={{y:0, opacity:1}} transition={{delay:0.5, duration:.5}}>
               <AiFillMail className='text-6xl'/>
