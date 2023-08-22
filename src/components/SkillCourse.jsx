@@ -8,7 +8,7 @@ function SkillCourse() {
         {/* skills */}
         <motion.div initial={{x:-100, opacity: 0}} 
         whileInView={{x:0, opacity:1}} 
-        
+        viewport={{once: true}}
         transition={{
           duration: 0.4,
           delay: 1.2,
@@ -30,7 +30,7 @@ function SkillCourse() {
           {/* courses */}
         <motion.div initial={{x:100, opacity: 0}} 
         whileInView={{x:0, opacity:1}} 
-        
+        viewport={{once: true}}
         transition={{
           duration: 0.4,
           delay: 1.2,

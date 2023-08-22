@@ -14,7 +14,7 @@ import Navbar from './components/Navbar'
 import { motion, useScroll } from 'framer-motion';
 
 function App() {
-  const { scrollYProgress } = useScroll()
+  
 
   register()
   return (
@@ -34,6 +34,7 @@ function App() {
         <motion.div
         initial={{opacity:0}}
         whileInView={{opacity:1}}
+        viewport={{ocne: true}}
         transition={{delay: 1}}
         className='hidden w-screen h-screen gap-2 md:grid grid-col-2 md:grid-cols-2 md:grid-row-2' id='#projetos'>
        
@@ -72,7 +73,7 @@ function App() {
 
         </div>
 
-        <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 0.5, duration:0.8}}  className='mt-4 flex flex-col items-center justify-center w-[90vw] h-[50vh] gap-24 bg-[#212529] rounded-3xl' id='#tecnologias'>
+        <motion.div initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once: true}} transition={{delay: 0.5, duration:0.8}}  className='mt-4 flex flex-col items-center justify-center w-[90vw] h-[50vh] gap-24 bg-[#212529] rounded-3xl' id='#tecnologias'>
         <SkillCourse/>
 
         </motion.div>

@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 
 function Main() {
     const [userInfo, setUserinfo] = useState(0)
-    const [repo, setRepos] = useState(0)
   
   const fetchUserInfo = () => {
     fetch('https://api.github.com/users/igorsantos13')
